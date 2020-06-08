@@ -1,4 +1,4 @@
-# Curl A Dog
+# Curl A Dog - Dogs.sh
 
 <pre>
 <br>
