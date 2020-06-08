@@ -2,7 +2,8 @@
 
 # Update and Install Packages
 # ---------------------------
-sudo apt update && sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
 sudo apt install apache2 php libapache2-mod-php apache2-utils libapache2-mod-evasive -y
 sudo apt install unattended-upgrades apt-listchanges -y 
 sudo apt install jp2a -y
@@ -25,7 +26,7 @@ rm -rf /var/www/images-download/
 
 # Remove Images that are blurred on default terminal
 # --------------------------------------------------
-wget https://raw.githubusercontent.com/fortwire/dogs/master/del-img.txt -O del-img.txt
+wget https://raw.githubusercontent.com/fortwire/dogs.sh/master/del-img.txt -O del-img.txt
 for x in $(cat del-img.txt);
     do
         echo "Deleting "$x;
@@ -67,8 +68,9 @@ mv /var/www/images-formatted /var/www/Images
 rm -f /var/www/index.html
 
 # Import index.php
-wget https://github.com/fortwire/dogs/raw/master/index.php -O /var/www/html/index.php
+wget https://github.com/fortwire/dogs.sh/raw/master/index.php -O /var/www/html/index.php
 sed -i '2s/.*/$IMG_COUNT='$imageCount';/' /var/www/html/index.php
+echo "Too many requests... Please wait a moment..." > /var/www/html/error
 chown -R www-data:www-data /var/www
 
 # Setup basic DoS Protection
@@ -83,6 +85,7 @@ echo "DOSSiteInterval     10" >> /etc/apache2/mods-enabled/evasive.conf
 echo "DOSBlockingPeriod   5" >> /etc/apache2/mods-enabled/evasive.conf
 echo "DOSLogDir           /var/log/mod_evasive" >> /etc/apache2/mods-enabled/evasive.conf
 echo "</IfModule>" >> /etc/apache2/mods-enabled/evasive.conf
+sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
 systemctl restart apache2
 
 # Install Fail2Ban
