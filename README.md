@@ -10,7 +10,6 @@
                  __/ |                
                 |___/                 
 
-
 Usage:
  $ curl dogs.sh
  $ curl dogs.sh/{SIZE}      (xs, s, m, l, xl)
@@ -27,7 +26,7 @@ Examples:
 
 2. Run Install Script
 
-       wget https://raw.githubusercontent.com/fortwire/dogs/master/install.sh
+       wget https://raw.githubusercontent.com/fortwire/dogs.sh/master/install.sh
        chmod 755 install.sh
        ./install.sh
        
@@ -38,6 +37,11 @@ Examples:
        apt install certbot
        sudo certbot certonly --webroot
        certbot --apache -d example.com -d www.example.com
+       
+4. Optional - Awesome Fullscreen Slide Show
+
+       # Press F11 on terminal then copy & paste the below command into the terminal
+       while : ;do curl dogs.sh/xl && sleep 5; done
       
 ## Acknowledgements
 
