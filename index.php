@@ -1,5 +1,5 @@
 <?php
-$IMG_COUNT=20000;
+$IMG_COUNT=12340;
 $PATH=$_SERVER['REQUEST_URI'];
 $SIZE=23; //DEFAULT
 $SLIDESHOW=0; //DEFAULT
@@ -12,6 +12,8 @@ switch ($PATH){
         case "/xl": $SIZE=65; break;
         case "/?": $HELP=1; break;
         case "/help": $HELP=1; break;
+        case "/": break;
+        default: echo "Invalid URL"; exit;
 }
 putenv("TERM=xterm-256color");
 $useragent = $_SERVER ['HTTP_USER_AGENT'];
@@ -24,7 +26,7 @@ if (strpos($useragent, 'curl') !== false) {
                 echo "   | (_| | (_) | (_| \__ \_\__ \ | | |     \  __  /\n";
                 echo "    \__,_|\___/ \__, |___(_)___/_| |_|     (_/ (_/\n";
                 echo "                 __/ |                \n";
-                echo "                |___/                 \n";
+                echo "                |___/    github.com/fortwire/dogs.sh \n";
                 echo "\nUsage:\n";
                 echo " $ curl dogs.sh\n";
                 echo " $ curl dogs.sh/{SIZE}       (xs, s, m, l, xl)\n";
@@ -43,7 +45,7 @@ if (strpos($useragent, 'curl') !== false) {
                 echo "   | (_| | (_) | (_| \__ \_\__ \ | | |     \  __  /<br>";
                 echo "    \__,_|\___/ \__, |___(_)___/_| |_|     (_/ (_/<br>";
                 echo "                 __/ |                <br>";
-                echo "                |___/                 <br></pre>";
+                echo "                |___/    github.com/fortwire/dogs.sh<br></pre>";
                 echo "<pre style='font-size: 80%; font-family:Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;'>";
                 echo "<br><b>Usage:</b><br>";
                 echo " $ curl dogs.sh<br>";
