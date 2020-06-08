@@ -27,16 +27,16 @@ Examples:
 2. Run Install Script
 
        wget https://raw.githubusercontent.com/fortwire/dogs.sh/master/install.sh
-       chmod 755 install.sh
-       ./install.sh
+       sudo chmod 755 install.sh
+       sudo ./install.sh
        
 3. Optional - Custom Domain & Enable SSL
 
        # 1 - In your DNS Manager. Create A Record > Server IP and CNAME Record > @
        # 2 - In Cerbot, choose to not redirect http to https, so can curl within https:// in cli
-       apt install certbot
+       sudo apt install certbot
        sudo certbot certonly --webroot
-       certbot --apache -d example.com -d www.example.com
+       sudo certbot --apache -d example.com -d www.example.com
        
 4. Optional - Awesome Fullscreen Slide Show
 
