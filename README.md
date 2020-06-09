@@ -30,7 +30,7 @@ Examples:
        sudo chmod 755 install.sh
        sudo ./install.sh
        
-3. Optional - Custom Domain & Enable SSL
+3. Optional - Custom Domain, Enable SSL, Auto-renewal and Metrics
 
        # 1 - Custom Domain
               # In your DNS Manager. Create A Record > Server IP and CNAME Record > @
