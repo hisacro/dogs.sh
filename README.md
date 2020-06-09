@@ -46,7 +46,7 @@ Examples:
 4. Optional - Awesome Fullscreen Slide Show
 
        # Press F11 on terminal then copy & paste the below command into the terminal
-       while : ;do curl dogs.sh/xl && sleep 5; done
+       while : ;do curl dogs.sh/xl && sleep 10; done
       
 ## Acknowledgements
 
