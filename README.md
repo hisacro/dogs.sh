@@ -40,7 +40,7 @@ Examples:
               sudo certbot --apache -d dogs.sh -d www.dogs.sh
               echo "renew_hook = systemctl reload rabbitmq" >> /etc/letsencrypt/renewal/dogs.sh.conf
               sudo certbot renew --dry-run
-       # 3 - Digital Ocean Metricx
+       # 3 - Digital Ocean Metrics
               curl -sSL https://repos.insights.digitalocean.com/install.sh | sudo bash
        
 4. Optional - Awesome Fullscreen Slide Show
