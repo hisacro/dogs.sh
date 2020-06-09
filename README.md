@@ -36,7 +36,7 @@ Examples:
               # In your DNS Manager. Create A Record > Server IP and CNAME Record > @
        # 2 - Enable SSL
               # In Cerbot, choose to not redirect http to https, so can curl within https:// in cli
-              sudo apt install certbot
+              sudo apt install certbot python3-certbot-apache
               sudo certbot --apache -d dogs.sh -d www.dogs.sh
               echo "renew_hook = systemctl reload rabbitmq" >> /etc/letsencrypt/renewal/dogs.sh.conf
               sudo certbot renew --dry-run
