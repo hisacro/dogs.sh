@@ -95,3 +95,11 @@ systemctl enable fail2ban
 cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 echo "maxretry = 3" >> /etc/fail2ban/jail.d/defaults-debian.conf
 systemctl restart fail2ban
+
+# Firewall
+sudo apt install ufw
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw enable
+sudo ufw status
